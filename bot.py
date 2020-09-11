@@ -90,4 +90,4 @@ async def right(ctx):
     time.sleep(1)
     sendCommand(s, "setStick LEFT 0x0 0x0")
 
-bot.run('NzUzNzU1MDM4NDQ2Mzg3MjYw.X1qzFQ.J_zNn_dABl4xC5il-pt3w8EvA5s')
+bot.run('your token here')
