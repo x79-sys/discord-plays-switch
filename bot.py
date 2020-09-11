@@ -12,7 +12,7 @@ def sendCommand(s, content):
     s.sendall(content.encode())
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(("192.168.1.67", 6000))
+s.connect(("Local switch ip here", 6000))
 
 @bot.event
 async def on_ready():
