@@ -23,16 +23,18 @@ async def on_ready():
     print('------')
 
 @bot.command()
-async def a(ctx, poop: typing.Optional[int] = 1):
-    for x in range(0, poop):
+async def a(ctx, cum: typing.Optional[int] = 1):
+    for x in range(0, cum):
         sendCommand(s, "click A")
         await asyncio.sleep(1)
+    print('A pressed ' + cum + ' times')
 
 @bot.command()
-async def b(ctx, poop: typing.Optional[int] = 1):
-    for x in range(0, poop):
+async def b(ctx, feet: typing.Optional[int] = 1):
+    for x in range(0, feet):
         sendCommand(s, "click B")
         await asyncio.sleep(1)
+    print('B pressed ' + feet + ' times')
 
 @bot.command()
 async def y(ctx):
@@ -43,20 +45,28 @@ async def x(ctx):
     sendCommand(s, "click X")
 
 @bot.command()
-async def dup(ctx):
-    sendCommand(s, "click DUP")
+async def dup(ctx, skull: typing.Optional[int] = 1):
+    for x in range(0, skull):
+        sendCommand(s, "click DUP")
+    print('D-Pad-UP pressed ' + skull + ' times')
 
 @bot.command()
-async def ddown(ctx):
-    sendCommand(s, "click DDOWN")
+async def ddown(ctx, piss: typing.Optional[int] = 1):
+    for x in range(0, piss):
+        sendCommand(s, "click DDOWN")
+    print('D-Pad-Down pressed ' + piss + ' times')
 
 @bot.command()
-async def dleft(ctx):
-    sendCommand(s, "click DLEFT")
+async def dleft(ctx, balls: typing.Optional[int] = 1):
+    for x in range(0, balls):
+        sendCommand(s, "click DLEFT")
+    print('D-Pad-Left pressed ' + balls + ' times')
 
 @bot.command()
-async def dright(ctx):
-    sendCommand(s, "click DRIGHT")
+async def dright(ctx, shit: typing.Optional[int] = 1):
+    for x in range(0, shit):
+        sendCommand(s, "click DRIGHT")
+    print('D-Pad-Right pressed ' + shit + ' times')
 
 @bot.command()
 async def r(ctx):
@@ -118,7 +128,7 @@ async def cright(ctx, poop: typing.Optional[float] = .25):
     sendCommand(s, "setStick RIGHT 0x7FFF 0x0")
     await asyncio.sleep(poop)
     sendCommand(s, "setStick RIGHT 0x0 0x0")
-    
+
 @bot.command()
 async def lreset(ctx):
     sendCommand(s, "setSTick LEFT 0x0")
@@ -126,7 +136,7 @@ async def lreset(ctx):
 @bot.command()
 async def rreset(ctx):
     sendCommand(s, "setSTick RIGHT 0x0")
-    
+
 @bot.command()
 async def ur(ctx, poop: typing.Optional[float] = .25):
     sendCommand(s, "setStick LEFT yVal 0x7FFF")
