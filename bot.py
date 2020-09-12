@@ -114,6 +114,8 @@ async def cright(ctx, poop: typing.Optional[float] = .25):
     await asyncio.sleep(poop)
     sendCommand(s, "setStick RIGHT 0x0 0x0")
     
-
+@bot.command()
+async def lreset(ctx):
+    sendCommand(s, "setSTick LEFT 0x0")
     
 bot.run('your token here')
