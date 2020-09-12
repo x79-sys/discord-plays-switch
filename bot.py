@@ -25,11 +25,13 @@ async def on_ready():
 async def a(ctx, poop: typing.Optional[int] = 1):
     for x in range(0, poop):
         sendCommand(s, "click A")
+        await asyncio.sleep(1)
 
 @bot.command()
 async def b(ctx, poop: typing.Optional[int] = 1):
     for x in range(0, poop):
         sendCommand(s, "click B")
+        await asyncio.sleep(1)
 
 @bot.command()
 async def y(ctx):
