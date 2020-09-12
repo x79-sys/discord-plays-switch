@@ -143,6 +143,20 @@ async def ul(ctx, poop: typing.Optional[float] = .25):
     time.sleep(poop)
     sendCommand(s, "setStick LEFT 0x0 0x0")
 
+@bot.command()
+async def dr(ctx, poop: typing.Optional[float] = .25):
+    sendCommand(s, "setStick LEFT yVal -0x8000")
+    time.sleep(poop)
+    sendCommand(s, "setStick LEFT 0x7FFF 0x0")
+    time.sleep(poop)
+    sendCommand(s, "setStick LEFT 0x0 0x0")
 
+@bot.command()
+async def dl(ctx, poop: typing.Optional[float] = .25):
+    sendCommand(s, "setStick LEFT yVal -0x8000")
+    time.sleep(poop)
+    sendCommand(s, "setStick LEFT -0x8000 0x0")
+    time.sleep(poop)
+    sendCommand(s, "setStick LEFT 0x0 0x0")
     
 bot.run('your token here')
