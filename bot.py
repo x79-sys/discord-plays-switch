@@ -22,8 +22,9 @@ async def on_ready():
     print('------')
 
 @bot.command()
-async def a(ctx):
-    sendCommand(s, "click A")
+async def a(ctx, poop: typing.Optional[int] = 1):
+    for x in range(0, poop):
+        sendCommand(s, "click A")
 
 @bot.command()
 async def b(ctx, poop: typing.Optional[int] = 1):
