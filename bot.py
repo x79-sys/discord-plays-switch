@@ -27,14 +27,12 @@ async def a(ctx, cum: typing.Optional[int] = 1):
     for x in range(0, cum):
         sendCommand(s, "click A")
         await asyncio.sleep(1)
-    print('A pressed ' + cum + ' times')
 
 @bot.command()
 async def b(ctx, feet: typing.Optional[int] = 1):
     for x in range(0, feet):
         sendCommand(s, "click B")
         await asyncio.sleep(1)
-    print('B pressed ' + feet + ' times')
 
 @bot.command()
 async def y(ctx):
@@ -48,26 +46,21 @@ async def x(ctx):
 async def dup(ctx, skull: typing.Optional[int] = 1):
     for x in range(0, skull):
         sendCommand(s, "click DUP")
-    print('D-Pad-UP pressed ' + skull + ' times')
 
 @bot.command()
 async def ddown(ctx, piss: typing.Optional[int] = 1):
     for x in range(0, piss):
         sendCommand(s, "click DDOWN")
-    print('D-Pad-Down pressed ' + piss + ' times')
 
 @bot.command()
 async def dleft(ctx, balls: typing.Optional[int] = 1):
     for x in range(0, balls):
         sendCommand(s, "click DLEFT")
-    print('D-Pad-Left pressed ' + balls + ' times')
 
 @bot.command()
 async def dright(ctx, shit: typing.Optional[int] = 1):
     for x in range(0, shit):
         sendCommand(s, "click DRIGHT")
-    print('D-Pad-Right pressed ' + shit + ' times')
-
 @bot.command()
 async def r(ctx):
     sendCommand(s, "click R")
