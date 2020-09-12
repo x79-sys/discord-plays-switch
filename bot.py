@@ -69,25 +69,25 @@ async def plus(ctx):
 @bot.command()
 async def up(ctx):
     sendCommand(s, "setStick LEFT yVal 0x7FFF")
-    time.sleep(1)
+    time.sleep(.25)
     sendCommand(s, "setStick LEFT yVal 0x0000")
 
 @bot.command()
 async def down(ctx):
     sendCommand(s, "setStick LEFT yVal -0x8000")
-    time.sleep(1)
+    time.sleep(.25)
     sendCommand(s, "setStick LEFT yVal 0x0000")
 
 @bot.command()
 async def left(ctx):
     sendCommand(s, "setStick LEFT -0x8000 0x0")
-    time.sleep(1)
+    time.sleep(.25)
     sendCommand(s, "setStick LEFT 0x0 0x0")
 
 @bot.command()
 async def right(ctx):
     sendCommand(s, "setStick LEFT 0x7FFF 0x0")
-    time.sleep(1)
+    time.sleep(.25)
     sendCommand(s, "setStick LEFT 0x0 0x0")
 
 bot.run('your token here')
