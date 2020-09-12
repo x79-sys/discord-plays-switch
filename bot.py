@@ -138,35 +138,39 @@ async def rreset(ctx):
     sendCommand(s, "setSTick RIGHT 0x0")
 
 @bot.command()
-async def ur(ctx, poop: typing.Optional[float] = .25):
-    sendCommand(s, "setStick LEFT yVal 0x7FFF")
-    time.sleep(poop)
-    sendCommand(s, "setStick LEFT 0x7FFF 0x0")
-    time.sleep(poop)
-    sendCommand(s, "setStick LEFT 0x0 0x0")
+async def ul(ctx, poop: typing.Optional[float] = .25, inter: typing.Optional[float] = 10):
+    te = poop/inter
+    to = poop/inter
+    while to < poop:
+        sendCommand(s, "setStick LEFT yVal 0x7FFF")
+        time.sleep(poop)
+        sendCommand(s, "setStick LEFT -0x8000 0x0")
+        time.sleep(poop)
+        sendCommand(s, "setStick LEFT 0x0 0x0")
+        to += te
 
 @bot.command()
-async def ul(ctx, poop: typing.Optional[float] = .25):
-    sendCommand(s, "setStick LEFT yVal 0x7FFF")
-    time.sleep(poop)
-    sendCommand(s, "setStick LEFT -0x8000 0x0")
-    time.sleep(poop)
-    sendCommand(s, "setStick LEFT 0x0 0x0")
+async def dr(ctx, poop: typing.Optional[float] = .25, inter: typing.Optional[float] = 10):
+    te = poop/inter
+    to = poop/inter
+    while to < poop:
+        sendCommand(s, "setStick LEFT yVal -0x8000")
+        time.sleep(te)
+        sendCommand(s, "setStick LEFT 0x7FFF 0x0")
+        time.sleep(te)
+        sendCommand(s, "setStick LEFT 0x0 0x0")
+        to += te
 
 @bot.command()
-async def dr(ctx, poop: typing.Optional[float] = .25):
-    sendCommand(s, "setStick LEFT yVal -0x8000")
-    time.sleep(poop)
-    sendCommand(s, "setStick LEFT 0x7FFF 0x0")
-    time.sleep(poop)
-    sendCommand(s, "setStick LEFT 0x0 0x0")
-
-@bot.command()
-async def dl(ctx, poop: typing.Optional[float] = .25):
-    sendCommand(s, "setStick LEFT yVal -0x8000")
-    time.sleep(poop)
-    sendCommand(s, "setStick LEFT -0x8000 0x0")
-    time.sleep(poop)
-    sendCommand(s, "setStick LEFT 0x0 0x0")
+async def dl(ctx, poop: typing.Optional[float] = .25, inter: typing.Optional[float] = 10):
+    te = poop/inter
+    to = poop/inter
+    while to < poop:
+        sendCommand(s, "setStick LEFT yVal -0x8000")
+        time.sleep(poop)
+        sendCommand(s, "setStick LEFT -0x8000 0x0")
+        time.sleep(poop)
+        sendCommand(s, "setStick LEFT 0x0 0x0")
+        to += te
     
 bot.run('your token here')
