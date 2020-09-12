@@ -90,4 +90,30 @@ async def right(ctx, poop: typing.Optional[float] = .25):
     await asyncio.sleep(poop)
     sendCommand(s, "setStick LEFT 0x0 0x0")
 
+@bot.command()
+async def cup(ctx, poop: typing.Optional[float] = .25):
+    sendCommand(s, "setStick RIGHT yVal 0x7FFF")
+    await asyncio.sleep(poop)
+    sendCommand(s, "setStick RIGHT yVal 0x0000")
+
+@bot.command()
+async def cdown(ctx, poop: typing.Optional[float] = .25):
+    sendCommand(s, "setStick RIGHT yVal -0x8000")
+    await asyncio.sleep(poop)
+    sendCommand(s, "setStick RIGHT yVal 0x0000")
+
+@bot.command()
+async def cleft(ctx, poop: typing.Optional[float] = .25):
+    sendCommand(s, "setStick RIGHT -0x8000 0x0")
+    await asyncio.sleep(poop)
+    sendCommand(s, "setStick RIGHT 0x0 0x0")
+
+@bot.command()
+async def cright(ctx, poop: typing.Optional[float] = .25):
+    sendCommand(s, "setStick RIGHT 0x7FFF 0x0")
+    await asyncio.sleep(poop)
+    sendCommand(s, "setStick RIGHT 0x0 0x0")
+    
+
+    
 bot.run('your token here')
