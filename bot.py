@@ -26,8 +26,9 @@ async def a(ctx):
     sendCommand(s, "click A")
 
 @bot.command()
-async def b(ctx):
-    sendCommand(s, "click B")
+async def b(ctx, poop: typing.Optional[int] = 1):
+    for x in range(0, poop):
+        sendCommand(s, "click B")
 
 @bot.command()
 async def y(ctx):
