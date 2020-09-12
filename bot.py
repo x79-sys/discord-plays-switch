@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import typing
 import socket
-import time
+import asyncio
 import binascii
 
 bot = commands.Bot(command_prefix='>')
@@ -67,27 +67,27 @@ async def plus(ctx):
 
 
 @bot.command()
-async def up(ctx):
+async def up(ctx, poop: typing.Optional[float] = .25):
     sendCommand(s, "setStick LEFT yVal 0x7FFF")
-    time.sleep(.25)
+    await asyncio.sleep(poop)
     sendCommand(s, "setStick LEFT yVal 0x0000")
 
 @bot.command()
-async def down(ctx):
+async def down(ctx, poop: typing.Optional[float] = .25):
     sendCommand(s, "setStick LEFT yVal -0x8000")
-    time.sleep(.25)
+    await asyncio.sleep(poop)
     sendCommand(s, "setStick LEFT yVal 0x0000")
 
 @bot.command()
-async def left(ctx):
+async def left(ctx, poop: typing.Optional[float] = .25):
     sendCommand(s, "setStick LEFT -0x8000 0x0")
-    time.sleep(.25)
+    await asyncio.sleep(poop)
     sendCommand(s, "setStick LEFT 0x0 0x0")
 
 @bot.command()
-async def right(ctx):
+async def right(ctx, poop: typing.Optional[float] = .25):
     sendCommand(s, "setStick LEFT 0x7FFF 0x0")
-    time.sleep(.25)
+    await asyncio.sleep(poop)
     sendCommand(s, "setStick LEFT 0x0 0x0")
 
 bot.run('your token here')
