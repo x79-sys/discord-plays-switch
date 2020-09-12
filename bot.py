@@ -4,6 +4,7 @@ import typing
 import socket
 import asyncio
 import binascii
+import time
 
 bot = commands.Bot(command_prefix='>')
 
@@ -125,5 +126,13 @@ async def lreset(ctx):
 @bot.command()
 async def rreset(ctx):
     sendCommand(s, "setSTick RIGHT 0x0")
+    
+@bot.command()
+async def ur(ctx, poop: typing.Optional[float] = .25):
+    sendCommand(s, "setStick LEFT yVal 0x7FFF")
+    time.sleep(poop)
+    sendCommand(s, "setStick LEFT 0x7FFF 0x0")
+    time.sleep(poop)
+    sendCommand(s, "setStick LEFT 0x0 0x0")
     
 bot.run('your token here')
