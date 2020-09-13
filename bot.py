@@ -199,7 +199,6 @@ async def login(ctx):
         await bot.login
     else:
         await ctx.send('nice try buddy')
-
 @bot.command()
 async def box1slot1(ctx, name):
     if ctx.message.author.id in [admin]:
