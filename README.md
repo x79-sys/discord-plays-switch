@@ -10,3 +10,5 @@ Add me on discord **x79#0001**
 * Discord.py is required
 * [Ldn-mitm](https://cdn.discordapp.com/attachments/679118895378071568/752723115594743858/ldn_mitm_ams_0_14_2_plus_crashfix.zip) this is the ideal version
 * homebrewed switch is required
+# cool showcase
+https://www.youtube.com/watch?v=6jpvDhyl_cI&ab_channel=x79
