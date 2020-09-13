@@ -4,6 +4,7 @@ import typing
 import socket
 import asyncio
 import binascii
+import typing
 import time
 
 bot = commands.Bot(command_prefix='>')
@@ -13,7 +14,7 @@ def sendCommand(s, content):
     s.sendall(content.encode())
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(("Local switch ip here", 6000))
+s.connect(("192.168.1.67", 6000))
 
 @bot.event
 async def on_ready():
@@ -61,6 +62,7 @@ async def dleft(ctx, balls: typing.Optional[int] = 1):
 async def dright(ctx, shit: typing.Optional[int] = 1):
     for x in range(0, shit):
         sendCommand(s, "click DRIGHT")
+
 @bot.command()
 async def r(ctx):
     sendCommand(s, "click R")
@@ -131,6 +133,18 @@ async def rreset(ctx):
     sendCommand(s, "setSTick RIGHT 0x0")
 
 @bot.command()
+async def ur(ctx, poop: typing.Optional[float] = .25, inter: typing.Optional[float] = 10):
+    te = poop/inter
+    to = poop/inter
+    while to < poop:
+        sendCommand(s, "setStick LEFT yVal 0x7FFF")
+        time.sleep(poop)
+        sendCommand(s, "setStick LEFT 0x7FFF 0x0")
+        time.sleep(poop)
+        sendCommand(s, "setStick LEFT 0x0 0x0")
+        to += te
+
+@bot.command()
 async def ul(ctx, poop: typing.Optional[float] = .25, inter: typing.Optional[float] = 10):
     te = poop/inter
     to = poop/inter
@@ -165,5 +179,38 @@ async def dl(ctx, poop: typing.Optional[float] = .25, inter: typing.Optional[flo
         time.sleep(poop)
         sendCommand(s, "setStick LEFT 0x0 0x0")
         to += te
+
+#Admin Commands
+#put your discord id as an int right there
+admin = 474751771282112513
+
+@bot.command()
+async def logout(ctx):
+    if ctx.message.author.id == admin:
+        await ctx.send('`Shutting down...`')
+        await bot.logout
+    else:
+        await ctx.send('nice try buddy')
+
+@bot.command()
+async def login(ctx):
+    if ctx.message.author.id == admin:
+        await ctx.send('`powering on...`')
+        await bot.login
+    else:
+        await ctx.send('nice try buddy')
+
+@bot.command()
+async def box1slot1(ctx, name):
+    if ctx.message.author.id in [admin]:
+        sendCommand(s, "peek 0x4506d890 344")
+        pokemonBytes = s.recv(689)
+        pokemonBytes = pokemonBytes[0:-1]
+        f = open(name + ".ek8", "wb")
+        f.write(binascii.unhexlify(pokemonBytes))
+        f.close
+        await ctx.send(file=discord.File(name + ".ek8"))
+    else:
+        await ctx.send('no')
     
 bot.run('your token here')
