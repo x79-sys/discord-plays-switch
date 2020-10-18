@@ -72,6 +72,14 @@ async def l(ctx):
     sendCommand(s, "click L")
 
 @bot.command()
+async def zl(ctx):
+    sendCommand(s, "click ZL")
+
+@bot.command()
+async def zr(ctx):
+    sendCommand(s, "click ZR")
+
+@bot.command()
 async def plus(ctx):
     sendCommand(s, "click PLUS")
 
