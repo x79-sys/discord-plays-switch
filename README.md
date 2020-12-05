@@ -2,7 +2,7 @@
 A python based discord bot that sends commands to a homebrewed nintendo switch so you could have a little community play on a switch togehter!
 
 ### Need Help?
-Add me on discord **x79#0001**
+Add me on discord **Chloe#8008**
 
 ### How to setup
 * Install [sysbot-base 1.3](https://github.com/olliz0r/sys-botbase/releases/tag/v1.3)
